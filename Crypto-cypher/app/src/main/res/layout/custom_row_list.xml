@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+       >
+
+        <ImageView
+            app:srcCompat="@drawable/cyp2"
+            android:id="@+id/ecryption_image"
+            android:layout_centerVertical="true"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/ecryption_image"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="0dp">
+
+            <TextView
+                android:text="Диффи - Хеллмана"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:textSize="19dp"
+                android:paddingLeft="10dp"
+                android:id="@+id/ecrypting_title" />
+
+            <TextView
+                android:text="Формирование общего ключа без передачи секретной информации"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/ecrypting_title"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="6dp"
+                android:id="@+id/ecrypting_sub"
+                android:paddingLeft="10dp"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hecmatyar.crypto_cypher.Calculating.Evklid">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView android:text="a*x + b*y = gcd (a, b)" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#c6757575"
+                android:textSize="16dp"
+                android:textIsSelectable="false"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/formula" />
+
+            <TextView android:text="Обобщенный алгоритм Евклида" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#c6494646"
+                android:textSize="18dp"
+                android:textIsSelectable="false"
+                android:id="@+id/algorythm"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="60dp"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/evklid_a"
+                android:inputType="number"
+                android:layout_below="@+id/algorythm"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:minWidth="20dp"
+                android:textSize="21dp"
+                android:layout_alignLeft="@+id/algorythm" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="x + "
+                android:id="@+id/text3"
+                android:layout_below="@+id/algorythm"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="2dp"
+                android:textSize="21dp"
+                android:layout_toRightOf="@+id/evklid_a"
+                android:layout_toEndOf="@+id/evklid_a" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/evklid_b"
+                android:inputType="number"
+                android:layout_below="@+id/algorythm"
+                android:layout_toRightOf="@+id/text3"
+                android:layout_toEndOf="@+id/text3"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:minWidth="20dp"
+                android:textSize="21dp"
+                android:clickable="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+
+                android:text="y ="
+                android:id="@+id/text4"
+                android:layout_below="@+id/algorythm"
+                android:layout_toRightOf="@+id/evklid_b"
+                android:layout_toEndOf="@+id/evklid_b"
+                android:layout_marginTop="30dp"
+                android:textSize="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="gcd (a, b)"
+                android:id="@+id/gdc"
+                android:layout_alignBottom="@+id/text4"
+                android:layout_toRightOf="@+id/text4"
+                android:layout_toEndOf="@+id/text4"
+                android:textSize="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="x = "
+                android:id="@+id/answer_x"
+                android:textSize="20dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/evklid_a"
+                android:layout_alignLeft="@+id/evklid_a"
+                android:layout_alignStart="@+id/evklid_a" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="y = "
+                android:id="@+id/answer_y"
+                android:textSize="20dp"
+                android:layout_marginLeft = "25dp"
+                android:layout_alignTop="@+id/answer_x"
+                android:layout_toRightOf="@+id/answer_x"
+                android:layout_toEndOf="@+id/answer_x"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="gcd (a, b) = "
+                android:id="@+id/d"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/answer_x"
+                android:layout_alignLeft="@+id/answer_x"
+                android:layout_alignStart="@+id/answer_x" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

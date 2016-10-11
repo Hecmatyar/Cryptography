@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#6e6e6e</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorGray">#dedede</color>
+    <color name="colorDarkGray">#acacac</color>
+
+    <color name="colorPrimaryDark">#2b6d64</color>
+    <color name="colorPrimary">#338076</color>
+
+    <!--<color name="colorPrimary2">#497084</color>-->
+    <!--<color name="colorPrimaryDark2">#3c6174</color>-->
+    <color name="colorPrimary2">#fff</color>
+    <color name="colorPrimaryDark2">#fff</color>
+    <color name="colorPrimary3">#ed5650</color>
+    <color name="colorPrimaryDark3">#d2433d</color>
+
+
+    <color name="color2">#4d5b41</color>
+    <color name="color3">#232f3e</color>
+    <color name="color4">#6a495c</color>
+    <color name="color5">#4d445f</color>
+    <color name="color6">#4a575f</color>
+    <color name="color7">#40a169</color>
+    <color name="color8">#fe5721</color>
+    <color name="color9">#2f71a8</color>
+    <color name="color10">#607d8b</color>
+    <color name="color11">#368959</color>
+    <color name="color12">#623380</color>
+    <color name="color13">#80192a</color>
+    <color name="color14">#86365e</color>
+    <color name="color15">#5474d1</color>
+    <color name="color16">#4763b2</color>
+    <color name="color17">#338076</color>
+    <color name="color18">#2b6d64</color>
+    <color name="color19">#5e8033</color>
+    <color name="color20">#506d2b</color>
+    <color name="color21">#507e95</color>
+    <color name="color22">#497084</color>
+    <color name="color23">#7f4cbf</color>
+    <color name="color24">#018b60</color>
+    <color name="color25">#6bb799</color>
+
+</resources>

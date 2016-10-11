@@ -1,0 +1,129 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.hecmatyar.crypto_cypher.Calculating.inversion">
+
+    <TextView android:text="Инверсия" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#c6757575"
+        android:textSize="16dp"
+        android:textIsSelectable="false"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:id="@+id/textView21" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#c6494646"
+        android:textSize="18dp"
+        android:textIsSelectable="false"
+        android:id="@+id/textView11"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="60dp"
+        android:text="Расширенный алгоритм Евклида" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="y ="
+        android:id="@+id/textView9"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/textView11"
+        android:layout_alignLeft="@+id/textView11"
+        android:layout_alignStart="@+id/textView11"
+        android:layout_marginTop="30dp"
+        android:textSize="22dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inv_a"
+        android:inputType="number"
+        android:layout_below="@+id/textView11"
+        android:layout_toRightOf="@+id/textView9"
+        android:layout_toEndOf="@+id/textView9"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:minWidth="30dp"
+        android:textSize="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:id="@+id/textView91"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/textView11"
+        android:layout_toRightOf="@+id/inv_a"
+        android:layout_toEndOf="@+id/inv_a"
+        android:layout_marginTop="18dp"
+        android:textSize="16dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inv_b"
+        android:inputType="number"
+        android:layout_below="@+id/textView11"
+        android:layout_toRightOf="@+id/textView91"
+        android:layout_toEndOf="@+id/textView91"
+        android:layout_marginTop="8dp"
+        android:minWidth="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mod"
+        android:id="@+id/textView31"
+        android:layout_below="@+id/textView11"
+        android:layout_toRightOf="@+id/inv_b"
+        android:layout_toEndOf="@+id/inv_b"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="22dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inv_c"
+        android:inputType="number"
+        android:layout_below="@+id/textView11"
+        android:layout_toRightOf="@+id/textView31"
+        android:layout_toEndOf="@+id/textView31"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="22dp"
+        android:clickable="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+
+        android:text="="
+        android:id="@+id/textView41"
+        android:layout_below="@+id/textView11"
+        android:layout_toRightOf="@+id/inv_c"
+        android:layout_toEndOf="@+id/inv_c"
+        android:layout_marginTop="30dp"
+        android:textSize="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="0"
+        android:id="@+id/inv_answer"
+        android:layout_alignBottom="@+id/textView41"
+        android:layout_toRightOf="@+id/textView41"
+        android:layout_toEndOf="@+id/textView41"
+        android:textSize="22dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/inv_b"
+        android:layout_alignLeft="@+id/inv_a"
+        android:layout_alignStart="@+id/inv_a"></RelativeLayout>
+
+</RelativeLayout>
