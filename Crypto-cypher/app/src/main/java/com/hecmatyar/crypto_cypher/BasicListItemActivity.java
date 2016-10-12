@@ -7,6 +7,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -36,33 +38,25 @@ public class BasicListItemActivity extends AppCompatActivity {
         String[] setactivity = activity.split(":");
         collapsingToolbar.setTitle(setactivity[1]);
 
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        FragmentTransaction ftrans = fragmentManager.beginTransaction();
-
-        Fragment fragment;
+        Fragment fragment = new Difi_Hellman();
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragment = new Difi_Hellman();
-        fragmentManager.beginTransaction().replace(R.id.setactivity, fragment).commit();
-
-        //ftrans.replace(R.id.setactivity, new Difi_Hellman()).commit();
-
-//        switch (setactivity[0]) {
-//            case "1":
-//                ftrans.replace(R.id.container, new Difi_Hellman()).commit();
-//                break;
-//            case "2":
-//                ftrans.replace(R.id.container, new Cypher_Shamir()).commit();
-//                break;
-//            case "3":
-//                ftrans.replace(R.id.container, new Cypher_LGamal()).commit();
-//                break;
-//            case "4":
-//                ftrans.replace(R.id.container, new Cypher_RSA()).commit();
-//                break;
-//            case "5":  break;
-//            case "6":  break;
-//            default: break;
-//        }
-        //fragmentcypher
+        switch (setactivity[0]) {
+            case "1":
+                fragment = new Difi_Hellman();
+                break;
+            case "2":
+                fragment = new Cypher_Shamir();
+                break;
+            case "3":
+                fragment = new Cypher_LGamal();
+                break;
+            case "4":
+                fragment = new Cypher_RSA();
+                break;
+            case "5":  break;
+            case "6":  break;
+            default: break;
+        }
+        fragmentManager.beginTransaction().add(R.id.setnewactivity, fragment).commit();
     }
 }
