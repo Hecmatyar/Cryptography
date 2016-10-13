@@ -35,6 +35,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.hecmatyar.crypto_cypher.MainActivity" />
         </activity>
+        <activity android:name=".Digital_Signature.PopUp"
+            android:theme="@style/AppTheme.CustomTheme">
+
+        </activity>
     </application>
 
 </manifest>

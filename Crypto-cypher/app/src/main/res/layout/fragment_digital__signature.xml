@@ -1,0 +1,1232 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGray"
+    tools:context="com.hecmatyar.crypto_cypher.Digital_Signature.Digital_Signature">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+
+                android:layout_marginTop="0dp"
+                android:id="@+id/first_l"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="4dp"
+                android:translationZ="-1dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/background_with_shadow2">
+
+                <TextView
+                    android:text="Подпись на основе шифра RSA"
+                    android:textColor="@color/Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView8"
+                    android:textSize="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:paddingStart="20dp"
+                    android:layout_marginTop="14dp" />
+
+                <TextView
+                    android:text="Требуемые значения"
+                    android:textSize="17dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView8"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView12" />
+                <TextView
+                    android:textSize="16dp"
+                    android:text="P, Q, N = (P * Q),  φ = (p -1) * (q - 1)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView12"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView13" />
+                <TextView
+                    android:textSize="16dp"
+                    android:text="d = 1..φ,  gcd (d, φ) = 1,  c^A = d^(-1) mod φ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView13"
+                    android:layout_marginBottom="20dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView14" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="Xеш-функция h(m) = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView14"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView15" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/rsa_hesh"
+                    android:layout_toRightOf="@+id/textView15"
+                    android:layout_below="@+id/textView14"
+                    android:layout_toEndOf="@+id/textView15" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="p = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView15"
+                    android:layout_marginBottom="30dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView16" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/rsa_p"
+                    android:layout_below="@+id/textView15"
+                    android:layout_toEndOf="@+id/textView16"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="q = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView15"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/rsa_p"
+                    android:id="@+id/textView17" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/rsa_q"
+                    android:layout_below="@+id/textView15"
+                    android:layout_toEndOf="@+id/textView17"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="d = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView15"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/rsa_q"
+                    android:id="@+id/textView18" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/rsa_d"
+                    android:layout_below="@+id/textView15"
+                    android:layout_toEndOf="@+id/textView18"
+                    android:layout_marginRight="16dp"/>
+
+                <!--<TextView-->
+                    <!--android:textSize="17dp"-->
+                    <!--android:text="m = "-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/textView15"-->
+                    <!--android:layout_marginBottom="10dp"-->
+                    <!--android:layout_toEndOf="@+id/rsa_d"-->
+                    <!--android:id="@+id/textView19" />-->
+
+                <!--<EditText-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="-11dp"-->
+                    <!--android:inputType="number"-->
+                    <!--android:textSize="17dp"-->
+                    <!--android:minWidth="6dp"-->
+                    <!--android:id="@+id/rsa_m"-->
+                    <!--android:layout_below="@+id/textView15"-->
+                    <!--android:layout_toEndOf="@+id/textView19"-->
+                   <!--/>-->
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="Вычисления"
+                    android:textColor="@color/Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView16"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="40dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/vich" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="N = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/vich"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/rsa_answer_n" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="φ = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/vich"
+                    android:layout_marginRight="30dp"
+                    android:layout_toEndOf="@+id/rsa_answer_n"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/rsa_answer_φ" />
+                <!--<TextView-->
+                    <!--android:textSize="17dp"-->
+                    <!--android:text="d = "-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/vich"-->
+                    <!--android:layout_marginRight="30dp"-->
+                    <!--android:layout_toEndOf="@+id/rsa_answer_φ"-->
+                    <!--android:layout_marginBottom="10dp"-->
+                    <!--android:id="@+id/rsa_answer_d" />-->
+                <TextView
+                    android:textSize="17dp"
+                    android:text="c = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/vich"
+                    android:layout_toEndOf="@+id/rsa_answer_φ"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/rsa_answer_c" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="S = y^c mod N = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rsa_answer_n"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/rsa_answer_s" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="Совпадение c h(m)  ω = S^d mod N = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rsa_answer_s"
+                    android:paddingStart="20dp"
+                    android:id="@+id/rsa_answer_w" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:id="@+id/line1"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/colorGray"
+                    android:layout_below="@+id/rsa_answer_w"
+                    />
+                <TextView
+                    android:textSize="18dp"
+                    android:text="Проверка подлинности подписи"
+                    android:textColor="@color/Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/line1"
+                    android:paddingStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/text1" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="N = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text1"
+                    android:layout_marginBottom="20dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView22" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/rsa_check_N"
+                    android:layout_below="@+id/text1"
+                    android:layout_toEndOf="@+id/textView22"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="d = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text1"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/rsa_check_N"
+                    android:id="@+id/textView23" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/rsa_check_d"
+                    android:layout_below="@+id/text1"
+                    android:layout_toEndOf="@+id/textView23"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="m = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text1"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/rsa_check_d"
+                    android:id="@+id/textView24" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/rsa_check_m"
+                    android:layout_below="@+id/text1"
+                    android:layout_toEndOf="@+id/textView24"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="S = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text1"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/rsa_check_m"
+                    android:id="@+id/textView25" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/rsa_check_s"
+                    android:layout_below="@+id/text1"
+                    android:layout_toEndOf="@+id/textView25"
+                    />
+
+                <TextView
+                    android:textSize="17dp"
+                    android:textColor="@color/color7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rsa_check_answer"
+                    android:layout_below="@+id/textView22"
+                    android:layout_marginStart="20dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:layout_width="match_parent"
+                android:id="@+id/second_l"
+                android:layout_height="match_parent"
+                android:elevation="4dp"
+                android:translationZ="-1dp"
+                android:background="@drawable/background_with_shadow2"
+                android:layout_below="@+id/first_l"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:text="Подпись на основе шифра Эль-Гамаля"
+                    android:textColor="@color/Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView27"
+                    android:textSize="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:paddingStart="20dp"
+                    android:layout_marginTop="14dp" />
+                />
+
+                <TextView
+                    android:text="Требуемые значения"
+                    android:textSize="17dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView27"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView31" />
+                <TextView
+                    android:textSize="16dp"
+                    android:text="p, q, x = 1..P-1,  y = g^x mod p, k = 1..p-1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView31"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView32" />
+                <TextView
+                    android:textSize="16dp"
+                    android:text="m * h(m) = h, h = 1..p, gcd (k, p-1) = 1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView32"
+                    android:layout_marginBottom="20dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView33" />
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="Xеш-функция h(m) = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView33"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView34" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/lgamal_hesh"
+                    android:layout_toRightOf="@+id/textView34"
+                    android:layout_below="@+id/textView33"
+                    android:layout_toEndOf="@+id/textView34" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="p = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView34"
+                    android:layout_marginBottom="30dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView35" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/lgamal_p"
+                    android:layout_below="@+id/textView34"
+                    android:layout_toEndOf="@+id/textView35"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="g = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView34"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/lgamal_p"
+                    android:id="@+id/textView37" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/lgamal_g"
+                    android:layout_below="@+id/textView34"
+                    android:layout_toEndOf="@+id/textView37"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="k = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView34"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/lgamal_g"
+                    android:id="@+id/textView40" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/lgamal_k"
+                    android:layout_below="@+id/textView34"
+                    android:layout_toEndOf="@+id/textView40"
+                    android:layout_marginRight="16dp"/>
+                <TextView
+                    android:textSize="17dp"
+                    android:text="x = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView34"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/lgamal_k"
+                    android:id="@+id/textView76" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/lgamal_x"
+                    android:layout_below="@+id/textView34"
+                    android:layout_toEndOf="@+id/textView76"
+                    />
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="Вычисления"
+                    android:textColor="@color/Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView35"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="40dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/vich1" />
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="y = g^x mod p = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/vich1"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/lgamal_answer_y" />
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="r = g^k mod p = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lgamal_answer_y"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/lgamal_answer_r" />
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="U = (h - x*r) mod (p - 1) = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lgamal_answer_r"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/lgamal_answer_u" />
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="S = k^-1*u mod (p - 1) = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lgamal_answer_u"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/lgamal_answer_s" />
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="Совпадение y^r * r^s = g^h mod p"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lgamal_answer_s"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView41" />
+
+                <TextView
+                    android:textSize="17dp"
+                    android:textColor="@color/color7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView41"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/lgamal_answer_check" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:id="@+id/line2"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/colorGray"
+                    android:layout_below="@+id/lgamal_answer_check"
+                    />
+                <TextView
+                    android:textSize="18dp"
+                    android:text="Проверка подлинности подписи"
+                    android:textColor="@color/Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/line2"
+                    android:paddingStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/text2" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="p = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text2"
+                    android:layout_marginBottom="20dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView43" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/lgamal_check_p"
+                    android:layout_below="@+id/text2"
+                    android:layout_toEndOf="@+id/textView43"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="g = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text2"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/lgamal_check_p"
+                    android:id="@+id/textView44" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/lgamal_check_g"
+                    android:layout_below="@+id/text2"
+                    android:layout_toEndOf="@+id/textView44"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="y = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text2"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/lgamal_check_g"
+                    android:id="@+id/textView45" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/lgamal_check_y"
+                    android:layout_below="@+id/text2"
+                    android:layout_toEndOf="@+id/textView45"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="В сообщении"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView43"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/textView48" />
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="m = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView48"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/textView49" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/lgamal_check_m"
+                    android:layout_below="@+id/textView48"
+                    android:layout_toEndOf="@+id/textView49"
+                    android:layout_marginRight="16dp"
+                    />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="r = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView48"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/lgamal_check_m"
+                    android:id="@+id/textView50" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/lgamal_check_r"
+                    android:layout_below="@+id/textView48"
+                    android:layout_toEndOf="@+id/textView50"
+                    android:layout_marginRight="16dp"
+                    />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="S = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView48"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/lgamal_check_r"
+                    android:id="@+id/textView51" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/lgamal_check_s"
+                    android:layout_below="@+id/textView48"
+                    android:layout_toEndOf="@+id/textView51"
+                    />
+
+                <TextView
+                    android:textSize="17dp"
+                    android:textColor="@color/color7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView49"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/lgamal_check_answer" />
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:layout_width="match_parent"
+                android:id="@+id/thierd_l"
+                android:minHeight="100dp"
+                android:layout_height="match_parent"
+                android:elevation="4dp"
+                android:translationZ="-1dp"
+                android:background="@drawable/background_with_shadow2"
+                android:layout_below="@+id/second_l"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:text="Российский ГОСТ 34.10 - 94"
+                    android:textColor="@color/Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView28"
+                    android:textSize="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:paddingStart="20dp"
+                    android:layout_marginTop="14dp" />
+
+                <TextView
+                    android:text="Требуемые значения"
+                    android:textSize="17dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView28"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView52" />
+
+                <TextView
+                    android:text="p, q, p = b/q + 1, a^q mod p = 1"
+                    android:textSize="17dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView52"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView53" />
+                <TextView
+                    android:text="x, y = a^x mod p, h = h(m), k = 1..q"
+                    android:textSize="17dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView53"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView54" />
+                <TextView
+                    android:text="Хеш-функция h(m) = "
+                    android:textSize="17dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView54"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/textView55" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/gost_h"
+                    android:layout_below="@+id/textView54"
+                    android:layout_toEndOf="@+id/textView55"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="q = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView55"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/textView56" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/gost_q"
+                    android:layout_below="@+id/textView55"
+                    android:layout_toEndOf="@+id/textView56"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="x = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/textView55"
+                    android:layout_toEndOf="@+id/gost_q"
+                    android:id="@+id/textView58" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/gost_x"
+                    android:layout_below="@+id/textView55"
+                    android:layout_toEndOf="@+id/textView58"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="k = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/textView55"
+                    android:layout_toEndOf="@+id/gost_x"
+                    android:id="@+id/textView59" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/gost_k"
+                    android:layout_below="@+id/textView55"
+                    android:layout_toEndOf="@+id/textView59"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="g = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/textView55"
+                    android:layout_toEndOf="@+id/gost_k"
+                    android:id="@+id/textView60" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/gost_g"
+                    android:layout_below="@+id/textView55"
+                    android:layout_toEndOf="@+id/textView60"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="Вычисления"
+                    android:textColor="@color/Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView56"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="40dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/vich2" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="a = g^b mod p = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/vich2"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/gost_answer_a" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="r = (a^k mod p) mod q = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/gost_answer_a"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/gost_answer_r" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="s = (k*h + x*r) mod q = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/gost_answer_r"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/gost_answer_s" />
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="Сообщение (m, r, s) = (1,2,3)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/gost_answer_s"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/gost_answer" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:id="@+id/line3"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/colorGray"
+                    android:layout_below="@+id/gost_answer"
+                    />
+                <TextView
+                    android:textSize="18dp"
+                    android:text="Проверка подлинности подписи"
+                    android:textColor="@color/Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/line3"
+                    android:paddingStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/text4" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="q = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text4"
+                    android:paddingStart="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/textView61" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/gost_check_q"
+                    android:layout_below="@+id/text4"
+                    android:layout_toEndOf="@+id/textView61"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="p = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text4"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/gost_check_q"
+                    android:id="@+id/textView62" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/gost_check_p"
+                    android:layout_below="@+id/text4"
+                    android:layout_toEndOf="@+id/textView62"
+                    android:layout_marginRight="16dp"/>
+                <TextView
+                    android:textSize="17dp"
+                    android:text="a = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text4"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/gost_check_p"
+                    android:id="@+id/textView63" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/gost_check_a"
+                    android:layout_below="@+id/text4"
+                    android:layout_toEndOf="@+id/textView63"
+                    android:layout_marginRight="16dp"/>
+                <TextView
+                    android:textSize="17dp"
+                    android:text="y = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text4"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/gost_check_a"
+                    android:id="@+id/textView64" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/gost_check_y"
+                    android:layout_below="@+id/text4"
+                    android:layout_toEndOf="@+id/textView64"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="Сообщение  m ="
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView61"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/textView65" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/gost_check_m"
+                    android:layout_below="@+id/textView61"
+                    android:layout_toEndOf="@+id/textView65"
+                    android:layout_marginRight="16dp"/>
+                <TextView
+                    android:textSize="17dp"
+                    android:text="r ="
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView61"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/gost_check_m"
+                    android:id="@+id/textView66" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/gost_check_r"
+                    android:layout_below="@+id/textView61"
+                    android:layout_toEndOf="@+id/textView66"
+                    android:layout_marginRight="16dp"/>
+                <TextView
+                    android:textSize="17dp"
+                    android:text="s ="
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView61"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/gost_check_r"
+                    android:id="@+id/textView67" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-11dp"
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:minWidth="6dp"
+                    android:id="@+id/gost_check_s"
+                    android:layout_below="@+id/textView61"
+                    android:layout_toEndOf="@+id/textView67"
+                    android:layout_marginRight="16dp"/>
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="U1 = s*h^(-1) mod q = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView65"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/textView69" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="U2 = -r*h^(-1) mod q = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView69"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/textView70" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="V = (a^u1 * y^u2 mod p) mod q = "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView70"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/textView71" />
+
+                <TextView
+                    android:textSize="17dp"
+                    android:text="Подлинность сообщений  (V = r) "
+                    android:textColor="@color/Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView71"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/textView72" />
+                <TextView
+                    android:textSize="17dp"
+                    android:text="Сообщение подлинно  12 = 12"
+                    android:textColor="@color/color7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView72"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/textView73" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:layout_width="match_parent"
+                android:id="@+id/fourth_l"
+                android:minHeight="100dp"
+                android:layout_height="wrap_content"
+                android:elevation="4dp"
+                android:translationZ="-1dp"
+                android:background="@drawable/background_with_shadow2"
+                android:layout_below="@+id/thierd_l"
+               >
+
+                <Button
+                    android:text="Pop up"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/color9"
+                    android:textColor="@color/colorWhite"
+                    android:id="@+id/showpopup"
+                    />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

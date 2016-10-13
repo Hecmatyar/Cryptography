@@ -53,8 +53,12 @@ public class BasicListItemActivity extends AppCompatActivity {
             case "4":
                 fragment = new Cypher_RSA();
                 break;
-            case "5":  break;
-            case "6":  break;
+            case "5":
+                //дешифрование 1
+                break;
+            case "6":
+                //дешифрование 2
+                break;
             default: break;
         }
         fragmentManager.beginTransaction().add(R.id.setnewactivity, fragment).commit();

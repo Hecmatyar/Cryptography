@@ -20,6 +20,8 @@ import android.view.MenuItem;
 
 import com.hecmatyar.crypto_cypher.Calculating.Calculate;
 import com.hecmatyar.crypto_cypher.Decrypting.Decryprion;
+import com.hecmatyar.crypto_cypher.Digital_Signature.Digital_Signature;
+import com.hecmatyar.crypto_cypher.Digital_Signature.PopUp;
 import com.hecmatyar.crypto_cypher.Encrypting.Encrypting;
 import com.hecmatyar.crypto_cypher.Settings.SettingsActivity;
 
@@ -112,6 +114,7 @@ public class MainActivity extends AppCompatActivity
             ftrans.replace(R.id.content_main, new Decryprion()).commit();
         } else if (id == R.id.nav_sub) {
             abl.setElevation(14);
+            ftrans.replace(R.id.content_main, new Digital_Signature()).commit();
 
         } else if (id == R.id.nav_protocol) {
             abl.setElevation(14);
@@ -120,7 +123,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(MainActivity.this, SettingsActivity.class));
 
         } else if (id == R.id.nav_send) {
-
+            startActivity(new Intent(MainActivity.this, PopUp.class));
         }
 
         setTitle(item.getTitle());
